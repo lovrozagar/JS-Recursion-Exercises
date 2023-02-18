@@ -13,3 +13,16 @@ function fibonacciLoop(sequenceLength) {
 }
 
 console.log(fibonacciLoop(8));
+
+// BY RECURSION
+function fibonacciRecursion(sequenceLength, sequence = [0, 1]) {
+  if (sequence.length >= sequenceLength) {
+    return sequence.slice(0, sequenceLength);
+  }
+
+  let currentNumber = sequence.at(-1) + sequence.at(-2);
+  sequence.push(currentNumber);
+  return fibonacciRecursion(sequenceLength, sequence);
+}
+
+console.log(fibonacciRecursion(8));
